@@ -6,7 +6,7 @@ function setup(){
     cmajor = [0, 48, 50, 52, 53, 55, 57, 59, 60];
 
     //socket = io.connect('http://localhost:3000/');
-    socket = io.connect('http://gradation.herokuapp.com');
+    socket = io.connect('https://gradation.herokuapp.com');
     /* tweets for connetion testing
     socket.on('tweet', function(tweet) {
         console.log('tweet from', tweet.ID);
