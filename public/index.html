@@ -2,7 +2,7 @@
 <head>
     <html lang="en">
     <meta charset="utf-8">
-    <title>node test</title>
+    <title>gradation (audio)</title>
     <meta name="description" content="">
     <meta name="author" content="Tristan Rodman">
     <link rel="stylesheet" href="style.css">
@@ -21,3 +21,11 @@
     <script language="javascript" type="text/javascript" src="sketch.js"></script>
 </head>
 <body>
+    <canvas id="circlecanvas" width="100" height="100"></canvas>
+    <script>
+        var canvas = document.getElementById("circlecanvas");
+        var context = canvas.getContext("2d");
+        var arc = context.arc(50, 50, 50, 0, Math.PI * 2, false);
+        context.fill();
+    </script>
+</body>

@@ -1,4 +1,4 @@
-var socket; var canvas; var sins;
+var socket; var canvas; var sins; var recorder; var file;
 
 function setup(){
     canvas = createCanvas(0, 0);
@@ -295,4 +295,23 @@ function setup(){
         var id = user.id;
         sins[id].stop();
     });
+    
+    recorder = new p5.SoundRecorder();
+    file = new p5.SoundFile();
+}
+
+var counter = 0;
+
+function mouseClicked() {
+    if (counter==0) {
+        recorder.record(file);
+        console.log('recording');
+        counter = 1;
+    }
+    else {
+        console.log('saving');
+        recorder.stop();
+        saveSound(file, 'gradation_output.wav');
+        counter = 0;
+    }
 }
