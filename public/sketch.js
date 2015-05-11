@@ -796,30 +796,12 @@ function setup(){
         console.log('blue note 2 is ' + noteY);
         blu2[id].freq(noteY);
     });
-    /*
+
     recorder = new p5.SoundRecorder();
     file = new p5.SoundFile();
-    */
-}
-
-/*
-recording?
-*/
-
-/*
-var counter = 0;
-
-function mouseClicked() {
-    if (counter==0) {
-        recorder.record(file);
-        console.log('recording');
-        counter = 1;
-    }
-    else {
-        console.log('saving');
+    recorder.record(file);
+    $('#record').click(function() {
         recorder.stop();
         saveSound(file, 'gradation_output.wav');
-        counter = 0;
-    }
+    });
 }
-*/

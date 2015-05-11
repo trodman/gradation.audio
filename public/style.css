@@ -40,6 +40,10 @@ a {
     color: black;
 }
 
+#record:hover {
+    background-color: red;
+}
+
 #one-one {
     background-color: pink;
 }
