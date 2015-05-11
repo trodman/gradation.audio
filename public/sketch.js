@@ -18,7 +18,7 @@ function setup(){
     });
     
     // handling total user counting
-    socket.on('useron', function(connected) {
+    socket.on('useron', function(connected, pinkcount, redcount, orangecount, yellowcount, greencount, bluecount) {
         if (connected == 1) {
             console.log('users connected is ' + connected);
             $('#count').html(connected);
@@ -30,9 +30,81 @@ function setup(){
             $('#count').html(connected);
             $('#isare').html('are');
             $('#users').html('users');
+        }
+        if (pinkcount == 0) {
+            console.log('pink users connected is ' + pinkcount);
+            $('#pinkcount').html(pinkcount + ' users connected');
+        }
+        else if (pinkcount == 1) {
+            console.log('pink users connected is ' + pinkcount);
+            $('#pinkcount').html(pinkcount + ' user connected');
+        }
+        else if (pinkcount > 1) {
+            console.log('pink users connected is ' + pinkcount);
+            $('#pinkcount').html(pinkcount + ' users connected');
+        }
+        if (redcount == 0) {
+            console.log('pink users connected is ' + redcount);
+            $('#redcount').html(redcount + ' users connected');
+        }
+        else if (redcount == 1) {
+            console.log('pink users connected is ' + redcount);
+            $('#redcount').html(redcount + ' user connected');
+        }
+        else if (redcount > 1) {
+            console.log('pink users connected is ' + redcount);
+            $('#redcount').html(redcount + ' users connected');
+        }
+        if (orangecount == 0) {
+            console.log('pink users connected is ' + orangecount);
+            $('#orangecount').html(orangecount + ' users connected');
+        }
+        else if (orangecount == 1) {
+            console.log('pink users connected is ' + orangecount);
+            $('#orangecount').html(orangecount + ' user connected');
+        }
+        else if (orangecount > 1) {
+            console.log('pink users connected is ' + orangecount);
+            $('#orangecount').html(orangecount + ' users connected');
+        }
+        if (yellowcount == 0) {
+            console.log('pink users connected is ' + yellowcount);
+            $('#yellowcount').html(yellowcount + ' users connected');
+        }
+        else if (yellowcount == 1) {
+            console.log('pink users connected is ' + yellowcount);
+            $('#yellowcount').html(yellowcount + ' user connected');
+        }
+        else if (yellowcount > 1) {
+            console.log('pink users connected is ' + yellowcount);
+            $('#yellowcount').html(yellowcount + ' users connected');
+        }
+        if (greencount == 0) {
+            console.log('pink users connected is ' + greencount);
+            $('#greencount').html(greencount + ' users connected');
+        }
+        else if (greencount == 1) {
+            console.log('pink users connected is ' + greencount);
+            $('#greencount').html(greencount + ' user connected');
+        }
+        else if (greencount > 1) {
+            console.log('pink users connected is ' + greencount);
+            $('#greencount').html(greencount + ' users connected');
+        }
+        if (bluecount == 0) {
+            console.log('pink users connected is ' + bluecount);
+            $('#bluecount').html(bluecount + ' users connected');
+        }
+        else if (bluecount == 1) {
+            console.log('pink users connected is ' + bluecount);
+            $('#bluecount').html(bluecount + ' user connected');
+        }
+        else if (bluecount > 1) {
+            console.log('pink users connected is ' + bluecount);
+            $('#bluecount').html(bluecount + ' users connected');
         }
     });
-    socket.on('useroff', function(connected) {
+    socket.on('useroff', function(connected, pinkcount, redcount, orangecount, yellowcount, greencount, bluecount) {
         if (connected == 1) {
             console.log('users connected is ' + connected);
             $('#count').html(connected);
@@ -44,6 +116,78 @@ function setup(){
             $('#count').html(connected);
             $('#isare').html('are');
             $('#users').html('users');
+        }
+        if (pinkcount == 0) {
+            console.log('pink users connected is ' + pinkcount);
+            $('#pinkcount').html(pinkcount + ' users connected');
+        }
+        else if (pinkcount == 1) {
+            console.log('pink users connected is ' + pinkcount);
+            $('#pinkcount').html(pinkcount + ' user connected');
+        }
+        else if (pinkcount > 1) {
+            console.log('pink users connected is ' + pinkcount);
+            $('#pinkcount').html(pinkcount + ' users connected');
+        }
+        if (redcount == 0) {
+            console.log('pink users connected is ' + redcount);
+            $('#redcount').html(redcount + ' users connected');
+        }
+        else if (redcount == 1) {
+            console.log('pink users connected is ' + redcount);
+            $('#redcount').html(redcount + ' user connected');
+        }
+        else if (redcount > 1) {
+            console.log('pink users connected is ' + redcount);
+            $('#redcount').html(redcount + ' users connected');
+        }
+        if (orangecount == 0) {
+            console.log('pink users connected is ' + orangecount);
+            $('#orangecount').html(orangecount + ' users connected');
+        }
+        else if (orangecount == 1) {
+            console.log('pink users connected is ' + orangecount);
+            $('#orangecount').html(orangecount + ' user connected');
+        }
+        else if (orangecount > 1) {
+            console.log('pink users connected is ' + orangecount);
+            $('#orangecount').html(orangecount + ' users connected');
+        }
+        if (yellowcount == 0) {
+            console.log('pink users connected is ' + yellowcount);
+            $('#yellowcount').html(yellowcount + ' users connected');
+        }
+        else if (yellowcount == 1) {
+            console.log('pink users connected is ' + yellowcount);
+            $('#yellowcount').html(yellowcount + ' user connected');
+        }
+        else if (yellowcount > 1) {
+            console.log('pink users connected is ' + yellowcount);
+            $('#yellowcount').html(yellowcount + ' users connected');
+        }
+        if (greencount == 0) {
+            console.log('pink users connected is ' + greencount);
+            $('#greencount').html(greencount + ' users connected');
+        }
+        else if (greencount == 1) {
+            console.log('pink users connected is ' + greencount);
+            $('#greencount').html(greencount + ' user connected');
+        }
+        else if (greencount > 1) {
+            console.log('pink users connected is ' + greencount);
+            $('#greencount').html(greencount + ' users connected');
+        }
+        if (bluecount == 0) {
+            console.log('pink users connected is ' + bluecount);
+            $('#bluecount').html(bluecount + ' users connected');
+        }
+        else if (bluecount == 1) {
+            console.log('pink users connected is ' + bluecount);
+            $('#bluecount').html(bluecount + ' user connected');
+        }
+        else if (bluecount > 1) {
+            console.log('pink users connected is ' + bluecount);
+            $('#bluecount').html(bluecount + ' users connected');
         }
     });
     

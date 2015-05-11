@@ -30,7 +30,7 @@ io.on('connection', function (socket) {
     var user = {id: socket.id};
     connected++;
     console.log ('number of people connected is ' + connected);
-    io.emit('useron', connected);
+    io.emit('useron', connected, pinkcount, redcount, orangecount, yellowcount, greencount, bluecount);
     
     // clearing all oscillators on user disconnect
     socket.on('disconnect', function () {
@@ -38,7 +38,7 @@ io.on('connection', function (socket) {
         io.emit('userClear', user);
         connected--;
         console.log ('number of people connected is ' + connected);
-        io.emit('useroff', connected);
+        io.emit('useroff', connected, pinkcount, redcount, orangecount, yellowcount, greencount, bluecount);
         //resets all counters and disconnects all sites if nobody is visiting
         if (connected == 0) {
             pinkcount = 0;
