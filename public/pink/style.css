@@ -1,0 +1,84 @@
+html, body {
+    margin: 0 auto;
+    padding: 0;
+}
+.box {
+    display: block;
+    float: left;
+    background-color: white;
+    width: 20vw;
+    height: 25vh;
+    border-width: 0px;
+    border-style: solid;
+    border-color: black;
+    /*
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    */
+}
+
+.box:hover {
+    z-index:555555 !important;
+}
+
+#one-one {
+    background-color: #DC143C;
+}
+#one-two {
+    background-color: #E02B50; 
+}
+#one-three {
+    background-color: #E34363;
+}
+#one-four {
+    background-color: #E65B77;
+}
+#one-five {
+    background-color: #EA728A;
+}
+#two-one {
+    background-color: #E02B50;
+}
+#two-two {
+    background-color: #E34363;
+}
+#two-three {
+    background-color: #E65B77;
+}
+#two-four {
+    background-color: #EA728A;
+}
+#two-five {
+    background-color: #EE8A9E;
+}
+#three-one {
+    background-color: #E34363;
+}
+#three-two {
+    background-color: #E65B77;
+}
+#three-three {
+    background-color: #EA728A;
+}
+#three-four {
+    background-color: #EE8A9E;
+}
+#three-five {
+    background-color: #F1A1B1;
+}
+#four-one {
+    background-color: #E65B77;
+}
+#four-two {
+    background-color: #EA728A;
+}
+#four-three {
+    background-color: #EE8A9E;
+}
+#four-four {
+    background-color: #F1A1B1;
+}
+#four-five {
+    background-color: #F4B8C4;
+}

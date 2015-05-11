@@ -5,13 +5,12 @@
     <title>gradation (audio)</title>
     <meta name="description" content="">
     <meta name="author" content="Tristan Rodman">
+    <meta name=viewport content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script> -->
-    <!-- blast.js -->
-    <script src="scripts/jquery.blast.min.js"></script>
     <!-- p5 -->
     <script language="javascript" type="text/javascript" src="scripts/p5.js"></script>
     <!-- uncomment lines below to include extra p5 libraries  -->
@@ -19,13 +18,25 @@
     <script language="javascript" src="scripts/p5.dom.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script language="javascript" type="text/javascript" src="sketch.js"></script>
+    <script language="javascript" type="text/javascript" src="script.js"></script>
 </head>
 <body>
-    <canvas id="circlecanvas" width="100" height="100"></canvas>
-    <script>
-        var canvas = document.getElementById("circlecanvas");
-        var context = canvas.getContext("2d");
-        var arc = context.arc(50, 50, 50, 0, Math.PI * 2, false);
-        context.fill();
-    </script>
+    <div id="text">
+        <span><b>gradation</b>, a networked + collaborative soundscape</span>
+        <br>
+        <span>click on one of the environments below to play</span>
+        <br>
+        <span>turn up your speakers to listen in</span>
+        <br>
+        <span>there <span id="isare">are</span> currently <span id="count">__</span> total <span id="users">users</span> connected</span>
+        <br>
+    </div>
+    <div id="grid">
+        <a href="/pink"><div class="block" id="one-one"><span id="pinktext">pink<br><span id="pinkcount">0 users connected</span></span></div></a>
+        <a href="/red"><div class="block" id="two-one"><span id="redtext">red<br><span id="redcount">0 users connected</span></span></div></a>
+        <a href="/orange"><div class="block" id="three-one"><span id="orange">orange<br><span id="orangecount">0 users connected</span></span></div></a>
+        <a href="/yellow"><div class="block" id="one-two"><span id="yellowtext">yellow<br><span id="yellowcount">0 users connected</span></span></div></a>
+        <a href="/green"><div class="block" id="two-two"><span id="greentext">green<br><span id="greencount">0 users connected</span></span></div></a>
+        <a href="/blue"><div class="block" id="three-two"><span id="bluetext">blue<br><span id="bluecount">0 users connected</span></span></div></a>
+    </div>
 </body>
