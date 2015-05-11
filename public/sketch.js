@@ -199,7 +199,9 @@ function setup(){
         }
     });
     //handling for blue counting
-    socket.on('blueConnect', function(blueCounter) {
+    socket.on('blueConnect', function(blueCounter, user) {
+        var id = user.id;
+        console.log('new blue at ' + id);
         if (blueCounter == 0) {
             console.log('blue users connected is ' + blueCounter);
             $('#bluecount').html(blueCounter + ' users connected');
@@ -214,7 +216,9 @@ function setup(){
         }
     });
     
-    socket.on('blueDisconnect', function(blueCounter) {
+    socket.on('blueDisconnect', function(blueCounter, user) {
+        var id = user.id;
+        console.log('disconnected blue at ' + id);
         if (blueCounter == 0) {
             console.log('blue users connected is ' + blueCounter);
             $('#bluecount').html(blueCounter + ' users connected');
@@ -234,10 +238,13 @@ function setup(){
     sound synthesis
     
     */
-    
     //setting up scale degrees
     
     cmajor = [0, 48, 50, 52, 53, 55, 57, 59, 60];
+
+    /*
+    red
+    */
     
     //setting up a new oscillator at the user id on each ping
 
@@ -247,145 +254,185 @@ function setup(){
         //first row
         if (tag == 'one-one') {
             var id = user.id;
-            sins[id] = new p5.SinOsc(midiToFreq(cmajor[1]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id] = new p5.SinOsc(midiToFreq(cmajor[1]))
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('one-one tagged on');
         };
         if (tag == 'one-two') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[2]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('one-two tagged on');
         };
         if (tag == 'one-three') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[3]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('one-three tagged on');
         };
         if (tag == 'one-four') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[4]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('one-four tagged on');
         };
         if (tag == 'one-five') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[5]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('one-five tagged on');
         };
         //second row
         if (tag == 'two-one') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[2]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('two-one tagged on');
         };
         if (tag == 'two-two') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[3]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('two-two tagged on');
         };
         if (tag == 'two-three') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[4]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('two-three tagged on');
         };
         if (tag == 'two-four') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[5]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('two-four tagged on');
         };
         if (tag == 'two-five') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[6]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('two-five tagged on');
         };
         //third row
         if (tag == 'three-one') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[3]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('three-one tagged on');
         };
         if (tag == 'three-two') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[4]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('three-two tagged on');
         };
         if (tag == 'three-three') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[5]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('three-three tagged on');
         };
         if (tag == 'three-four') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[6]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('three-four tagged on');
         };
         if (tag == 'three-five') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[7]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('three-five tagged on');
         };
         //fourth row
         if (tag == 'four-one') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[4]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('four-one tagged on');
         };
         if (tag == 'four-two') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[5]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('four-two tagged on');
         };
         if (tag == 'four-three') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[6]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('four-three tagged on');
         };
         if (tag == 'four-four') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[7]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('four-four tagged on');
         };
         if (tag == 'four-five') {
             var id = user.id;
             sins[id] = new p5.SinOsc(midiToFreq(cmajor[8]));
-            sins[id].start();
-            sins[id].amp(.5, .5);
+            sins[id].amp(.2, .1);
+            setTimeout(function() {
+                sins[id].start();
+            }, 50);
             console.log('four-five tagged on');
         };
     });
@@ -393,126 +440,168 @@ function setup(){
         //first row
         if (tag == 'one-one') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            setTimeout(sins[id].stop(), 500);
+            //sins[id].amp(0, .2);
+            //setTimeout(sins[id].stop(), 500);
             //sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('one-one tagged off');
         }
         if (tag == 'one-two') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            setTimeout(sins[id].stop(), 500);
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('one-two tagged off');
         }
         if (tag == 'one-three') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            setTimeout(sins[id].stop(), 500);
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('one-three tagged off');
         }
         if (tag == 'one-four') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            setTimeout(sins[id].stop(), 500);
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('one-four tagged off');
         }
         if (tag == 'one-five') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            setTimeout(sins[id].stop(), 500);
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('one-five tagged off');
         }
         //second row
         if (tag == 'two-one') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('two-one tagged off');
         }
         if (tag == 'two-two') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('two-two tagged off');
         }
         if (tag == 'two-three') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('two-three tagged off');
         }
         if (tag == 'two-four') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('two-four tagged off');
         }
         if (tag == 'two-five') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('two-five tagged off');
         }
         //third row
         if (tag == 'three-one') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('three-one tagged off');
         }
         if (tag == 'three-two') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('three-two tagged off');
         }
         if (tag == 'three-three') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('three-three tagged off');
         }
         if (tag == 'three-four') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('three-four tagged off');
         }
         if (tag == 'three-five') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('three-five tagged off');
         }
         //fourth row
         if (tag == 'four-one') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('four-one tagged off');
         }
         if (tag == 'four-two') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('four-two tagged off');
         }
         if (tag == 'four-three') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('four-three tagged off');
         }
         if (tag == 'four-four') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('four-four tagged off');
         }
         if (tag == 'four-five') {
             var id = user.id;
-            sins[id].amp(0, .5);
-            sins[id].stop();
+            sins[id].amp(0, .1);
+            setTimeout(function() {
+                sins[id].stop();
+            }, 100);
             console.log('four-five tagged off');
         }
     });
@@ -524,8 +613,49 @@ function setup(){
         }
     });
     
+    /*
+    blue
+    */
+    
+    var blu1 = [];
+    var blu2 = [];
+    var bluID1 = 0;
+    var bluID2 = 0;
+    socket.on('blueConnect', function(blueCounter, user) {
+        var id = user.id;
+        console.log('blue user called second time is' + id);
+        blu1[id] = new p5.TriOsc();
+        blu2[id] = new p5.TriOsc();
+        blu1[id].freq(midiToFreq(48));
+        blu2[id].freq(midiToFreq(52));
+        blu1[id].amp(0.2);
+        blu2[id].amp(0.2);
+        blu1[id].start();
+        blu2[id].start();
+    });
+    socket.on('blueDisconnect', function(blueCounter, user) {
+        var id = user.id;
+        blu1[id].stop();
+        blu2[id].stop();
+    });
+    
+    socket.on('blueOscX', function(noteX, user) {
+        id = user.id;
+        console.log('osc 1 id = ' + bluID1);
+        console.log('blue note 1 is ' + noteX);
+        blu1[id].freq(noteX);
+    });
+    
+    socket.on('blueOscY', function(noteY, user) {
+        id = user.id;
+        console.log('osc 2 id = ' + bluID2);
+        console.log('blue note 2 is ' + noteY);
+        blu2[id].freq(noteY);
+    });
+    /*
     recorder = new p5.SoundRecorder();
     file = new p5.SoundFile();
+    */
 }
 
 /*

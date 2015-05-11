@@ -39,6 +39,21 @@ io.on('connection', function (socket) {
         connected--;
         console.log ('number of people connected is ' + connected);
         io.emit('useroff', connected);
+        //resets all counters and disconnects all sites if nobody is visiting
+        if (connected == 0) {
+            pinkcount = 0;
+            io.emit('pinkDisconnect', pinkcount);
+            redcount = 0;
+            io.emit('redDisconnect', redcount);
+            orangecount = 0;
+            io.emit('orangeDisconnect', orangecount);
+            yellowcount = 0;
+            io.emit('yellowDisconnect', yellowcount);
+            greencount = 0;
+            io.emit('greenDisconnect', greencount);
+            bluecount = 0;
+            io.emit('blueDisconnect', bluecount);
+        }
     });
     
     /*handling for pink
@@ -117,13 +132,27 @@ io.on('connection', function (socket) {
     */
     socket.on('blueConnect', function() {
         bluecount++;
+        user = {id: socket.id};
         console.log('users connected to blue: ' + bluecount);
-        io.emit('blueConnect', bluecount);
+        io.emit('blueConnect', bluecount, user);
     });
     socket.on('blueDisconnect', function() {
         bluecount--;
+        user = {id: socket.id};
         console.log('users connected to blue: ' + bluecount);
-        io.emit('blueDisconnect', bluecount);
+        io.emit('blueDisconnect', bluecount, user);
+    });
+    socket.on('blueOscX', function(noteX) {
+        console.log('blueOscX ping + ' + noteX);
+        user = {id: socket.id};
+        io.emit('blueOscX', noteX, user);
+        console.log('noteX out is + ' + noteX);
+    });
+    socket.on('blueOscY', function(noteY) {
+        console.log('blueOscY ping + ' + noteY);
+        user = {id: socket.id};
+        io.emit('blueOscY', noteY, user);
+        console.log('noteY out is + ' + noteY);
     });
 });
 

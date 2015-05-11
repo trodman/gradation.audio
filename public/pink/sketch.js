@@ -66,8 +66,10 @@ function setup() {
         console.log(split);
         console.log(split[0]);
         console.log(split[1]);
-        sins[split[0]][split[1]].amp(.5, .1);
-        sins[split[0]][split[1]].start();
+        sins[split[0]][split[1]].amp(.2, .1);
+        setTimeout(function() {
+            sins[split[0]][split[1]].start();
+        }, 50);
     });
     $('.box').mouseleave(function() {
         var tag = $(this).attr('id');
@@ -82,6 +84,9 @@ function setup() {
         console.log(split[0]);
         console.log(split[1]);
         sins[split[0]][split[1]].amp(0, .1);
+        setTimeout(function() {
+            sins[split[0]][split[1]].stop();
+        }, 100);
         //setInterval(sins[split[0]][split[1]].stop(), 1000);
         //sins[split[0]][split[1]].stop();
         //sins[split[0]][split[1]].amp(0, .1);

@@ -1,4 +1,12 @@
-html, body {
+body, html {
     margin: 0 auto;
     padding: 0;
+    background-color: dodgerblue;
+}
+#box {
+    display: block;
+    position: absolute;
+    background-color: deepskyblue;
+    height: 100%;
+    width: 100%;
 }
