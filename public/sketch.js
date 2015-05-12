@@ -830,10 +830,12 @@ function setup(){
     */
     recorder = new p5.SoundRecorder();
     file = new p5.SoundFile();
-    recorder.record(file);
-    $('#record').click(function() {
+    $("#record").clicktoggle(function() {
+        recorder.record(file);
+        $(this).html('download your session');
+    }, function() {
         recorder.stop();
         saveSound(file, 'gradation_output.wav');
+        $(this).html('record your session');
     });
-    
 }
