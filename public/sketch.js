@@ -8,8 +8,8 @@ function setup(){
     
     */
     
-    //socket = io.connect('http://localhost:5000/');
-    socket = io.connect('http://gradation.herokuapp.com');
+    socket = io.connect('http://localhost:5000/');
+    //socket = io.connect('http://gradation.herokuapp.com');
     
     //tweets for connetion testing
     socket.on('tweet', function(tweet) {
@@ -823,6 +823,35 @@ function setup(){
         var id = user.id;
         sqr[id].amp(0, .1);
         console.log('orange mouse up from ' + id);
+    });
+    
+    /*
+    green
+    */
+    var noise = [];
+    //var delay = [];
+    socket.on('greenConnect', function(greencount, user) {
+        var id = user.id;
+        console.log('new green user at' + id);
+        noise[id] = new p5.Noise('brown');
+        noise[id].start();
+        noise[id].amp(0);
+        delay = new p5.Delay();
+        delay.process(noise[id], .12, .7, 2300);
+    });
+    
+    socket.on('greenDisconnect', function(greencount, user) {
+        var id = user.id;
+        console.log('logged off green user at' + id);
+        noise[id].stop();
+    });
+    
+    var env = [];
+    socket.on('greenScroll', function(wheel, user) {
+        console.log('scrolling on green ' + id + wheel);
+        var id = user.id;
+        env[id] = new p5.Env(.01, .2, .2, .1);
+        env[id].play(noise[id]);
     });
     
     /*

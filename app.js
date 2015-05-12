@@ -129,13 +129,20 @@ io.on('connection', function (socket) {
     */
     socket.on('greenConnect', function() {
         greencount++;
+        user = {id: socket.id};
         console.log('users connected to green: ' + greencount);
-        io.emit('greenConnect', greencount);
+        io.emit('greenConnect', greencount, user);
     });
     socket.on('greenDisconnect', function() {
         greencount--;
+        user = {id: socket.id};
         console.log('users connected to green: ' + greencount);
-        io.emit('greenDisconnect', greencount);
+        io.emit('greenDisconnect', greencount, user);
+    });
+    socket.on('greenScroll', function(wheel) {
+        user = {id: socket.id};
+        console.log('scrolling on green ' + wheel);
+        io.emit('greenScroll', wheel, user);
     });
     /* handling for blue
     */

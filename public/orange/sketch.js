@@ -49,3 +49,8 @@ function mouseReleased() {
     sin.amp(0, .1);
     socket.emit('mouseUp');
 }
+
+function windowResized() {
+    canvas.width = windowWidth;
+    canvas.height = windowHeight;
+}

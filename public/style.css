@@ -23,9 +23,9 @@ body, html {
 #grid {
     clear: both;
     float: left;
-    width: 45vw;
+    width: 30vw;
     position: absolute;
-    left: 40vw;
+    left: 50vw;
 }
 
 .block {

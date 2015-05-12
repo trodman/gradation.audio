@@ -15,7 +15,6 @@
     <script language="javascript" type="text/javascript" src="scripts/p5.js"></script>
     <!-- uncomment lines below to include extra p5 libraries  -->
     <script language="javascript" src="scripts/p5.sound.js"></script>
-    <script language="javascript" src="scripts/p5.dom.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script language="javascript" type="text/javascript" src="script.js"></script>
     <script language="javascript" type="text/javascript" src="sketch.js"></script>
@@ -33,11 +32,13 @@
         <span class="color" id="record">record your session</span>
     </div>
     <div id="grid">
-        <a href="/pink"><div class="block" id="one-one"><span id="pinktext">pink<br><span id="pinkcount">0 users connected</span></span></div></a>
-        <a href="/red"><div class="block" id="two-one"><span id="redtext">red<br><span id="redcount">0 users connected</span></span></div></a>
-        <a href="/orange"><div class="block" id="three-one"><span id="orange">orange<br><span id="orangecount">0 users connected</span></span></div></a>
-        <a href="/yellow"><div class="block" id="one-two"><span id="yellowtext">yellow<br><span id="yellowcount">0 users connected</span></span></div></a>
-        <a href="/green"><div class="block" id="two-two"><span id="greentext">green<br><span id="greencount">0 users connected</span></span></div></a>
-        <a href="/blue"><div class="block" id="three-two"><span id="bluetext">blue<br><span id="bluecount">0 users connected</span></span></div></a>
+        <a href="/pink" target="_blank"><div class="block" id="one-one"><span id="pinktext">pink [hover]<br><span id="pinkcount">0 users connected</span></span></div></a>
+        <!--
+        <a href="/red" target="_blank"><div class="block" id="two-one"><span id="redtext">red<br><span id="redcount">0 users connected</span></span></div></a>-->
+        <a href="/orange" target="_blank"><div class="block" id="three-one"><span id="orange">orange [drag]<br><span id="orangecount">0 users connected</span></span></div></a>
+        <!--
+        <a href="/yellow" target="_blank"><div class="block" id="one-two"><span id="yellowtext">yellow<br><span id="yellowcount">0 users connected</span></span></div></a> -->
+        <a href="/green" target="_blank"><div class="block" id="two-two"><span id="greentext">green [scroll]<br><span id="greencount">0 users connected</span></span></div></a>
+        <a href="/blue" target="_blank"><div class="block" id="three-two"><span id="bluetext">blue [resize]<br><span id="bluecount">0 users connected</span></span></div></a>
     </div>
 </body>
