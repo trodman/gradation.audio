@@ -797,6 +797,35 @@ function setup(){
         blu2[id].freq(noteY);
     });
 
+    /*
+    orange
+    */
+    var sqr = [];
+    socket.on('orangeConnect', function(orangecount, user) {
+        var id = user.id;
+        sqr[id] = new p5.SqrOsc();
+        sqr[id].freq(220);
+        //sqr[id].amp(0);
+        sqr[id].start();
+    });
+    socket.on('orangeDisconnect', function(orangecount, user) {
+        var id = user.id;
+        sqr[id].stop();
+    });
+    socket.on('orangeMouseDown', function(data, newFreq, user) {
+        var id = user.id;
+        sqr[id].freq(newFreq);
+        console.log('orange mouse down from ' + id);
+    });
+              
+    socket.on('orangeMouseUp', function(user) {
+        var id = user.id;
+        console.log('orange mouse up from ' + id);
+    });
+    
+    /*
+    recording
+    */
     recorder = new p5.SoundRecorder();
     file = new p5.SoundFile();
     recorder.record(file);
@@ -804,4 +833,5 @@ function setup(){
         recorder.stop();
         saveSound(file, 'gradation_output.wav');
     });
+    
 }

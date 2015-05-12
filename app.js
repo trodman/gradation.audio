@@ -97,12 +97,21 @@ io.on('connection', function (socket) {
     socket.on('orangeConnect', function() {
         orangecount++;
         console.log('users connected to orange: ' + orangecount);
-        io.emit('orangeConnect', orangecount);
+        io.emit('orangeConnect', orangecount, user);
     });
     socket.on('orangeDisconnect', function() {
         orangecount--;
         console.log('users connected to orange: ' + orangecount);
-        io.emit('orangeDisconnect', orangecount);
+        io.emit('orangeDisconnect', orangecount, user);
+    });
+    socket.on('mouseDown', function(data, newFreq) {
+        // Data comes in as whatever was sent, including objects
+        // console.log("Received: 'mouse' " + data.x + " " + data.y);      
+        // Send it to all other clients
+        io.emit('orangeMouseDown', data, newFreq, user);
+    });
+    socket.on('mouseUp', function(data) {
+        io.emit('orangeMouseUp', user);
     });
     /* handling for yellow
     */
