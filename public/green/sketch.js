@@ -3,8 +3,8 @@ var canvas; var socket; var noise;
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     cmajor = [0, 48, 50, 52, 53, 55, 57, 59, 60];
-    socket = io.connect('http://localhost:5000/');
-    //socket = io.connect('https://gradation.herokuapp.com');
+    //socket = io.connect('http://localhost:5000/');
+    socket = io.connect('https://gradation.herokuapp.com');
     socket.emit('greenConnect');
     $(this).unload(function() {
         socket.emit('greenDisconnect');

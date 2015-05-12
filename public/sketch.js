@@ -8,8 +8,8 @@ function setup(){
     
     */
     
-    socket = io.connect('http://localhost:5000/');
-    //socket = io.connect('http://gradation.herokuapp.com');
+    //socket = io.connect('http://localhost:5000/');
+    socket = io.connect('http://gradation.herokuapp.com');
     
     //tweets for connetion testing
     socket.on('tweet', function(tweet) {
