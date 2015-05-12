@@ -384,7 +384,7 @@ function setup(){
     */
     //setting up scale degrees
     
-    cmajor = [0, 48, 50, 52, 53, 55, 57, 59, 60];
+    cmajor = [0, 60, 62, 64, 65, 67, 69, 71, 72];
 
     /*
     red
