@@ -805,7 +805,7 @@ function setup(){
         var id = user.id;
         sqr[id] = new p5.SqrOsc();
         sqr[id].freq(220);
-        //sqr[id].amp(0);
+        sqr[id].amp(0);
         sqr[id].start();
     });
     socket.on('orangeDisconnect', function(orangecount, user) {
@@ -815,11 +815,13 @@ function setup(){
     socket.on('orangeMouseDown', function(data, newFreq, user) {
         var id = user.id;
         sqr[id].freq(newFreq);
+        sqr[id].amp(.2, .1);
         console.log('orange mouse down from ' + id);
     });
               
     socket.on('orangeMouseUp', function(user) {
         var id = user.id;
+        sqr[id].amp(0, .1);
         console.log('orange mouse up from ' + id);
     });
     
